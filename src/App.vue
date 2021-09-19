@@ -123,7 +123,7 @@ main{
   display: inline-block;
   padding: 10px 25px;
   color: #fff;
-  font-size: 102px;
+  font-size: 80px;
   font-weight: 900;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   background-color: rgba(255,255, 225, 0.25);
