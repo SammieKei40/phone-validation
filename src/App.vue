@@ -1,24 +1,27 @@
 <template>
-  <div>
+  <div id="app">
     <main>
       <div class="search-box">
         <input type="text" class="search-bar" placeholder="Type in the format +234808XXXXX" 
         v-model="query" 
         @keypress="fetchPhone">
       </div>
-  
-       <div class="phone-wrap">
+
+      <div class="phone-wrap">
         <div class="phone-box">
-          <div class="country">{{phone.location}}</div>
+          <div class="country">{{phone.country.name}} {{phone.country.code}}</div>
+          <div class="location">{{phone.location}}</div>
           <div class="type">{{phone.type}}</div>
           <div class="carrier">{{phone.carrier}}</div>
         </div>
       </div>
+
     </main>
-  </div>  
+  </div>
 </template>
 
 <script>
+
 export default {
   name: 'App',
   data() {
@@ -26,12 +29,18 @@ export default {
     api_key: "47bd0f6e7bcd4e9ba6dc26a87ee64913",
     base_url: "https://phonevalidation.abstractapi.com/v1/",
     query: '',
-    phone: {}
+    phone: {
+      location: null,
+      type: null,
+      country: {
+        code: ""
+      }
+    }
     }
   },
   methods: {
     fetchPhone(e){
-      if(e.key == "Enter" || e.key == 'Go'){
+      if(e.key == "Enter"){
         fetch(`${this.base_url}?api_key=${this.api_key}&phone=${this.query}`)
         .then(res => {
           return res.json();
@@ -139,4 +148,5 @@ main{
   font-style: italic;
   text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
 }
+
 </style>
