@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     fetchPhone(e){
-      if(e.key == "Enter"){
+      if(e.key == "Enter" || e.key == 'Go'){
         fetch(`${this.base_url}?api_key=${this.api_key}&phone=${this.query}`)
         .then(res => {
           return res.json();
