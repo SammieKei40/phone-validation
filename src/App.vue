@@ -9,7 +9,7 @@
 
       <div class="phone-wrap">
         <div class="phone-box">
-          <div class="country">{{phone.country.name}}, {{phone.country.code}}</div>
+          <div class="country">{{phone.country.name}} {{phone.country.code}}</div>
           <div class="location">{{phone.location}}</div>
           <div class="type">{{phone.type}}</div>
           <div class="carrier">{{phone.carrier}}</div>
@@ -29,7 +29,13 @@ export default {
     api_key: "47bd0f6e7bcd4e9ba6dc26a87ee64913",
     base_url: "https://phonevalidation.abstractapi.com/v1/",
     query: '',
-    phone: {}
+    phone: {
+      location: null,
+      type: null,
+      country: {
+        code: ""
+      }
+    }
     }
   },
   methods: {
