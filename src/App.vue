@@ -9,7 +9,7 @@
   
        <div class="phone-wrap">
         <div class="phone-box">
-          <div class="country">{{phone.location}} {{phone.country.code}}</div>
+          <div class="country">{{phone.location}}</div>
           <div class="type">{{phone.type}}</div>
           <div class="carrier">{{phone.carrier}}</div>
         </div>
